@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkodxqmqdwrie"]
+
+[ext_resource type="Script" uid="uid://dfn54nvrdwhbp" path="res://math_memory_game.gd" id="1_0inta"]
+[ext_resource type="Texture2D" uid="uid://gm3473lha2ej" path="res://floor.jpg" id="2_gs5kn"]
+[ext_resource type="Texture2D" uid="uid://c2a1a4ehqmru4" path="res://start_button.png" id="3_3whtb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0inta"]
+
+[node name="Math_Memory_game" type="Node"]
+script = ExtResource("1_0inta")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_0inta")
+offset_right = 2570.0
+offset_bottom = 2000.0
+size_flags_horizontal = 3
+texture = ExtResource("2_gs5kn")
+
+[node name="Number_1" type="Label" parent="."]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -110.0
+offset_right = -160.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number_2" type="Label" parent="."]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -107.0
+offset_right = -149.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number_3" type="Label" parent="."]
+z_index = 2
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -117.0
+offset_right = -163.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(10, 10)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_STA" type="Button" parent="."]
+offset_top = 150.0
+offset_right = 3848.0
+offset_bottom = 2318.0
+scale = Vector2(0.3, 0.3)
+icon = ExtResource("3_3whtb")
+flat = true
+
+[node name="User_input" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = 26.0
+offset_right = -136.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="Instructions" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 324.0
+offset_top = -224.0
+offset_right = 364.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.5, 5.5)
+
+[connection signal="pressed" from="Button_STA" to="." method="button_STA_pressed"]
