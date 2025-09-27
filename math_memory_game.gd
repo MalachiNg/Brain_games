@@ -12,6 +12,7 @@ extends Node
 @onready var score = 0
 
 func _ready():
+	$Back_Button.show()
 	$Instructions.text = "REMEMBER THE NUMBERS!" 
 	$Instructions.position = Vector2(90, 150) 
 	$Number_1.hide()
@@ -29,6 +30,7 @@ func button_STA_pressed():
 	reveal_numbers()
 	$Instructions.hide()
 	$Button_STA.hide()
+	$Back_Button.hide()
 
 func reveal_numbers():
 	$User_input.hide()
@@ -313,3 +315,8 @@ func game_over():
 	$Number_2.hide()
 	$Number_3.hide()
 	$Button_STA.show()
+
+
+
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file("res://main.tscn")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgrwoogdm3730"]
+
+[ext_resource type="Script" uid="uid://blaoj0k0tp7lc" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://gm3473lha2ej" path="res://floor.jpg" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://ddknjlhx2jnqg" path="res://Math_Memory_Game.png" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://b1qd5xm6gryxm" path="res://Button_Pressing_Game.png" id="3_lquwl"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_1bvp3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2000.0
+offset_bottom = 2000.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_h2yge")
+
+[node name="Math_Game_Button" type="Button" parent="."]
+offset_left = 186.0
+offset_top = 267.0
+offset_right = 2574.0
+offset_bottom = 2655.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("2_1bvp3")
+flat = true
+
+[node name="Button_Game_Button" type="Button" parent="."]
+offset_left = 703.0
+offset_top = 268.0
+offset_right = 3091.0
+offset_bottom = 2656.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("3_lquwl")
+flat = true
+
+[node name="Introduction" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(3.5, 3.5)
+
+[connection signal="pressed" from="Math_Game_Button" to="." method="_on_math_game_button_pressed"]
+[connection signal="pressed" from="Button_Game_Button" to="." method="_on_button_game_button_pressed"]

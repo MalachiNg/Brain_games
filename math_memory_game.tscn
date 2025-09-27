@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkodxqmqdwrie"]
+[gd_scene load_steps=6 format=3 uid="uid://dkodxqmqdwrie"]
 
 [ext_resource type="Script" uid="uid://dfn54nvrdwhbp" path="res://math_memory_game.gd" id="1_0inta"]
 [ext_resource type="Texture2D" uid="uid://gm3473lha2ej" path="res://floor.jpg" id="2_gs5kn"]
 [ext_resource type="Texture2D" uid="uid://c2a1a4ehqmru4" path="res://start_button.png" id="3_3whtb"]
+[ext_resource type="Texture2D" uid="uid://q8l3litsos4n" path="res://Back_Button.png" id="4_tcqeb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0inta"]
 
@@ -52,7 +53,7 @@ vertical_alignment = 1
 
 [node name="Number_3" type="Label" parent="."]
 z_index = 2
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -103,4 +104,13 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.5, 5.5)
 
+[node name="Back_Button" type="Button" parent="."]
+z_index = 2
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_tcqeb")
+flat = true
+
 [connection signal="pressed" from="Button_STA" to="." method="button_STA_pressed"]
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
