@@ -41,6 +41,7 @@ func _on_start_button_pressed():
 	location_6 = Vector2(randf_range(0, 1033), randf_range(0, 528))
 	$Button.position = location_1
 	game_running = true
+	master_timer_up = false
 	score = 0
 	master_timer()
 
@@ -97,13 +98,14 @@ func _on_dud_button_pressed():
 		button_stage += 1 # move the real button.
 
 func master_timer():
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(30).timeout
 	master_timer_up = true
 	get_tree().paused = true
 	game_over()
 
 
 func game_over():
+	button_stage = 1
 	$Button.hide()
 	$Start_Button.show()
 	$Instructions.show()
@@ -116,6 +118,7 @@ func game_over():
 		$Instructions.position.y = 0
 	if score != 1 and score != 0:
 		$Instructions.text = "You hit the blue " + str(score) + " times!"
+	get_tree().paused = false
 
 
 
