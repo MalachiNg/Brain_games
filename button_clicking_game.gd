@@ -60,14 +60,15 @@ func move_buttons():
 	elif button_stage == 6:
 		$Button.position = location_6
 	if not running_timer:
+		running_timer = true
 		var initial_button_stage = button_stage
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.6).timeout
+		running_timer = false
 		if initial_button_stage == button_stage:
 			if button_stage == 6:
 				button_stage = 1
 			else:
 				button_stage += 1 # change the button stage to the next position, as the user didn't click it in time.
-
 
 
 func _on_button_pressed():
@@ -80,7 +81,6 @@ func _on_button_pressed():
 	if rand == 2:
 		$Dud_Button.show()
 		$Dud_Button.position = Vector2(randf_range(0, 1033), randf_range(0, 528))
-		print(str($Dud_Button.position))
 		var initial_button_stage = button_stage
 		while (initial_button_stage == button_stage) == true and dud_pressed == false:
 			await get_tree().process_frame
